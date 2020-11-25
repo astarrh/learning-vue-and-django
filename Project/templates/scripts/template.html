@@ -1,0 +1,82 @@
+<script>
+
+  // store
+  const store = new Vuex.Store({
+    state: {
+        authors: [
+        {% for author in authors %}
+            {
+              name: '{{ author.name }}',
+              slug: '{{ author.slug }}',
+              bio: 'Generic Bio'
+            },
+        {% endfor %}
+        ],
+        articles: [
+        {% for article in articles %}
+            {
+              content: '{{ article.content | linebreaksbr }}',
+              name: '{{ article.name }}',
+              slug: '{{ article.slug }}',
+            },
+        {% endfor %}
+        ],
+    },
+    getters: {
+      getArticleBySlug: (state) => (slug) => {
+        return state.articles.find(articles => articles.slug === slug)
+      },
+      getAuthorBySlug: (state) => (slug) => {
+        return state.authors.find(authors => authors.slug === slug)
+      },
+    }
+  });
+
+  // components
+  ArticleList = Vue.component('article-list', {
+    data: function () { return { articles: store.state.articles } },
+    template: '#article-list-template',
+  });
+
+  AuthorList = Vue.component('author-list', {
+    data: function () { return { authors: store.state.authors } },
+    template: '#author-list-template',
+  });
+
+  ArticleItem = Vue.component('article-item', {
+    delimiters: ['[[', ']]'],
+    props: ['name', 'slug', 'content'],
+    template: '#article-item-template',
+  });
+
+  AuthorItem = Vue.component('author-item', {
+    delimiters: ['[[', ']]'],
+    props: ['name', 'slug', 'bio'],
+    template: '#author-item-template',
+    methods: {
+        reverseName: function() {
+            this.name = this.name.split('').reverse().join('')
+        }
+    }
+  });
+
+  // router
+  const routes = [
+    { component: ArticleList, path: '/article/', },
+    { component: AuthorList,  path: '/author/',  },
+    { component: ArticleItem, path: '/article/:slug/', },
+    { component: AuthorItem,  path: '/author/:slug/',  },
+  ]
+
+  const router = new VueRouter({
+    mode: 'history',
+    routes: routes,
+  })
+
+  // app
+  const vm = new Vue({
+      router,
+      store,
+  }).$mount('#myapp');
+
+</script>

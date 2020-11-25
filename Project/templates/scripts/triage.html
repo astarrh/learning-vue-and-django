@@ -1,0 +1,61 @@
+<script>
+
+
+    const vm = Vue.createApp({})
+
+    var projects = {
+        newProject: "Name New Project",
+        projects:[
+            {% for project in view.projects %}
+                {
+                    name: "{{ project.name }}",
+                    id: {{ project.id }}
+                }
+            {% endfor %}
+        ]
+    }
+
+    ProjectList = vm.component('project-list', {
+        data: function () { return {
+            projects: projects.projects,
+        }},
+        template: '#project-list-template',
+        methods: {
+            addProject(review) {
+                axios.post('{% url "Project:create_object" %}', review
+                ).then(function(response) {
+                    console.log(response)
+                }).catch(function(response) {
+                    console.log(response)
+                })
+            }
+        }
+    });
+
+    NewProject = vm.component('project-form', {
+        data: function () { return {
+            newProjectName: ""
+        }},
+        delimiters: ['[[', ']]'],
+        props: ['count', 'newProjectName'],
+        template: "#project-form-template",
+        methods: {
+            createProject: function () {
+                let projectCreated = {
+                    model: "project",
+                    name: this.newProjectName
+                }
+                this.$emit('project-created', projectCreated)
+                this.newProjectName = ""
+            }
+        }
+    })
+
+    ProjectItem = vm.component('project-item', {
+        delimiters: ['[[', ']]'],
+        props: ['name', 'id'],
+    })
+
+    vm.mount('#triageApp')
+
+</script>
