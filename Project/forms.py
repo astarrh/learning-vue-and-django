@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 
-from .models import Project, Resource, Binder
+from .models import Project, Resource, Task
 
 
 class ProjectForm(ModelForm):
@@ -10,11 +10,11 @@ class ProjectForm(ModelForm):
         fields = ['name',]
 
 
-class BinderForm(ModelForm):
+class TaskForm(ModelForm):
 
     class Meta:
-        model = Binder
-        fields = ['name',]
+        model = Task
+        fields = ['name', 'project']
 
 
 class ResourceForm(ModelForm):
@@ -26,6 +26,6 @@ class ResourceForm(ModelForm):
 
 MODEL_FORMS = {
     "project": ProjectForm,
-    "binder": BinderForm,
+    "task": TaskForm,
     "resource": ResourceForm
 }

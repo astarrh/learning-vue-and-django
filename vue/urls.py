@@ -9,9 +9,6 @@ from Project import views as myapp_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('projects/', include('Project.urls', namespace="Project")),
-    # paths for our app
-    path('', myapp_views.frontend),
-    path('triage/', myapp_views.TriageView.as_view(), name="triage"),
-    path('article/<slug:slug>/', myapp_views.frontend),
-    path('author/<slug:slug>/', myapp_views.frontend),
+    path('', myapp_views.HomeView.as_view(), name="home"),
+
 ]

@@ -12,5 +12,5 @@
 }
 
 .project-card {
-    @apply bg-gray-500 p-2;
+    @apply bg-gray-500;
 }

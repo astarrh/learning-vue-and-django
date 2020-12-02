@@ -7,7 +7,7 @@ from django.shortcuts import render
 from .models import Project
 
 
-class TriageView(TemplateView):
+class HomeView(TemplateView):
     template_name = "html/template.html"
 
     def projects(self):

@@ -1,0 +1,41 @@
+<!--- Header, Navbar --->
+<header class="bg-gray-900">
+    <div class="flex items-center justify-between px-4 py-3">
+        <div>
+            <h4 class="text-gray-300">TASKMASTER</h4>
+        </div>
+        <div>
+            <button type="button" class=" block text-gray-500 focus:text-white focus:outline-none hover:text-white">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="px-2 pt-2 pb-4">
+        <a class="block font-semibold hover:bg-gray-800 rounded px-2 py-1" href="#">Create Account</a>
+        <a class="block font-semibold hover:bg-gray-800 rounded px-2 py-1" href="#">Share Task</a>
+        <a class="block font-semibold hover:bg-gray-800 rounded px-2 py-1" href="#">Invite A Friend</a>
+    </div>
+</header>
+
+
+<!--- Inlay Check Field --->
+<form class="newTask mb-4 md:flex md:flex-wrap md:justify-between" action="/" method="post">
+  <div class="flex flex-col mb-2 md:w-full mt-1 relative">
+    <input type="text" name="resourceName" placeholder="Label" class="pr-8 text-black bg-gray-300 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-1 px-2 block w-full appearance-none leading-normal">
+      <div class="absolute top-2 right-2 h-5 w-5 cursor-pointer text-yellow-800 hover:text-yellow-600"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+    </svg>
+  </div>
+  </div>
+</form>
+
+
+<!--- Inlay Arrow Field --->
+<form class="mb-4 md:flex md:flex-wrap md:justify-between" action="/" method="post">
+  <div class="flex flex-col mb-2 md:w-full relative">
+    <input name="" placeholder="" class="pr-8 text-black bg-gray-300 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-1 px-2 block w-full appearance-none leading-normal" type="url">
+      <div class="absolute top-2 right-2 h-5 w-5 cursor-pointer text-yellow-800 hover:text-yellow-600"><div xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"></div>
+      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+    </div>
+  </div>
+</form>
