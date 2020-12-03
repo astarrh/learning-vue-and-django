@@ -12,23 +12,26 @@
   <body>
 <div class="min-h-screen">
 
-    <header class="bg-gray-900">
-        <div class="flex items-center justify-between px-4 py-3">
-            <div>
-                <h4 class="text-gray-300">TASKMASTER</h4>
+
+  <template>
+        <header class="bg-gray-900">
+            <div class="flex items-center justify-between px-4 py-3">
+                <div>
+                    <h4 class="text-gray-300">TASKMASTER</h4>
+                </div>
+                <div>
+                    <button type="button" class=" block text-gray-500 focus:text-white focus:outline-none hover:text-white">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                    </button>
+                </div>
             </div>
-            <div>
-                <button type="button" class=" block text-gray-500 focus:text-white focus:outline-none hover:text-white">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-                </button>
+            <div class="px-2 pt-2 pb-4">
+                <a class="block font-semibold hover:bg-gray-800 rounded px-2 py-1" href="#">Create Account</a>
+                <a class="block font-semibold hover:bg-gray-800 rounded px-2 py-1" href="#">Share Task</a>
+                <a class="block font-semibold hover:bg-gray-800 rounded px-2 py-1" href="#">Invite A Friend</a>
             </div>
-        </div>
-        <div class="px-2 pt-2 pb-4">
-            <a class="block font-semibold hover:bg-gray-800 rounded px-2 py-1" href="#">Create Account</a>
-            <a class="block font-semibold hover:bg-gray-800 rounded px-2 py-1" href="#">Share Task</a>
-            <a class="block font-semibold hover:bg-gray-800 rounded px-2 py-1" href="#">Invite A Friend</a>
-        </div>
-    </header>
+        </header>
+  </template>
 
   <div id="projects" class="p-6">
       <div id="projectsApp" class="grid grid-flo-col md:grid-cols-3 grid-cols-1 grid-rows-2 gap-2">
@@ -124,6 +127,7 @@
 </div>
 
    <script src="https://unpkg.com/vue@next"></script>
+{#   <script src="https://unpkg.com/vuex@next"></script>#}
    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
         axios.defaults.xsrfCookieName = 'csrftoken'

@@ -10,5 +10,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('projects/', include('Project.urls', namespace="Project")),
     path('', myapp_views.HomeView.as_view(), name="home"),
-
 ]
